@@ -57,4 +57,4 @@ cd ./simple_api/
 docker build -t student-list .
 ```
 
-![docker images](images/image-api.png "image de l'API")
+![docker images](images/image-api.png "docker images")
