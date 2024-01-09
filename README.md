@@ -33,7 +33,7 @@ L'application student_list comporte deux modules :
 
 - Élaborer un conteneur dédié à chaque module.
 - Établir des interactions entre ces différents conteneurs.
-- Offrir un registre privé pour leur gestion.
+- Offrir un registre privé pour stocker les images Docker.
 
 ## Le Plan
 
