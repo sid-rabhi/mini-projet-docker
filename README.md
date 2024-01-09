@@ -70,7 +70,7 @@ docker run -d --name api-student-list  -p 5000:5000 -v ./student_age.json:/data/
 ```bash
 docker ps -a
 ```
-![api container](images/image-api.png "docker images")
+![api container](images/container-api.png "docker images")
 
 - Tester l'API avec un curl
 
