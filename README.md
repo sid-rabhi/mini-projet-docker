@@ -14,7 +14,7 @@ Centre de formation : Eazytraining
 
 Période : novembre-décembre-janvier
 
-Date : 06 janvier 2024
+Date : 09 janvier 2024
 
 LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
 
@@ -81,7 +81,7 @@ curl -u toto:python -X GET http://192.168.56.14:5000/pozos/api/v1.0/get_student_
 ![curl](images/curl.png "curl")
 
 
-2. **Création du network**
+3. **Création du network**
 
 - Création du network `student-list-net`
 
@@ -109,7 +109,7 @@ cd website
 ![url](images/url.png "url")
 
 
-3. **Lancement de l'application web**
+4. **Lancement de l'application web**
 
 - Création du conteneur de l'application web qu'on va nommer `ihm-student-list` en utilisant le `USERNAME` et `PASSWORD` comme variable d'environnement, avant de lancer la commande il faut qu'on se positionne sur le répertoire `website`
 
@@ -123,7 +123,7 @@ docker run -d --name ihm-student-list  -p 80:80 --network student-list-net -v ./
 
 ![website](images/website.png "website")
 
-3. **Mise en place du fichier docker-compose.yml**
+5. **Mise en place du fichier docker-compose.yml**
 
 - Créer un registre et son UI en utilisant l'image `registry:2` pour le registre, et `joxit/docker-registry-ui:static` pour son interface utilisateur frontend et passé quelques variables d'environnement
 
