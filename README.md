@@ -51,7 +51,7 @@ L'application student_list comporte deux modules :
 ```bash
 cd ./simple_api/
 ```
-- Construitr l'image *student-list*
+- Construite l'image *student-list*
 
 ```bash
 docker build -t student-list .
@@ -62,15 +62,15 @@ docker build -t student-list .
 
 2. **Tester l'image de l'API**
 
-- Lancer le conteneur de l'API
+- Lancer le conteneur de l'API `api-student-list`
 
 ```bash
 docker run -d --name api-student-list  -p 5000:5000 -v ./student_age.json:/data/student_age.json student-list
-```
-```bash
 docker ps -a
 ```
-![api container](images/container-api.png "docker images")
+
+
+![api container](images/container-api.png "api container")
 
 - Tester l'API avec un curl
 
@@ -79,3 +79,32 @@ curl -u toto:python -X GET http://192.168.56.14:5000/pozos/api/v1.0/get_student_
 ```
 
 ![curl](images/curl.png "curl")
+
+
+2. **Création du network**
+
+- Création du network `student-list-net`
+
+```bash
+docker network create student-list-net
+docker network ls
+```
+
+![network](images/network.png "network")
+
+- Relancer le conteneur `api-student-list` en l'affectant au network `student-list-net`
+
+```bash
+docker rm -f api-student-list
+docker run -d --name api-student-list  -p 5000:5000 --network student-list-net -v ./student_age.json:/data/student_age.json student-list
+```
+
+- Modification de l'URL dans le fichier `index.php` se trouvant dans le dossier website
+
+```bash
+cd ..
+cd website
+```
+
+![url](images/url.png "url")
+
