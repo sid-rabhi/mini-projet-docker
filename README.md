@@ -22,7 +22,7 @@ LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
 
 ## L'objectif
 
-Déployer une application nommée **" student_list "**, très basique, qui permet à POZOS d'afficher la liste de certains étudiants avec leur âge.
+Déployer une application nommée **" student_list "**, très basique, qui permet à POZOS d'afficher la liste de certains étudiants avec leur âge, et par la suite offrir un registre privé pour stocker les images.
 
 L'application student_list comporte deux modules :
 
@@ -40,3 +40,21 @@ L'application student_list comporte deux modules :
 - Créer un **Dockerfile** pour construire l'image du conteneur api.
 - Créer un **docker-compose.yml** pour lancer l'application (API et application web), le registre local et son interface utilisateur.
 
+---
+
+## Étapes de réalistion du projet
+
+1. **Construire l'image de l'API**
+
+- Aller répertoire *simple_api* 
+
+```bash
+cd ./simple_api/
+```
+- Construitr l'image *student-list*
+
+```bash
+docker build -t student-list .
+```
+
+![docker images](images/image-api.png "image de l'API")
