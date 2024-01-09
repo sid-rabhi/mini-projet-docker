@@ -57,4 +57,25 @@ cd ./simple_api/
 docker build -t student-list .
 ```
 
-![docker images](images/image-api.png "docker images")
+![docker image api](images/image-api.png "docker image api")
+
+
+2. **Tester l'image de l'API**
+
+- Lancer le conteneur de l'API
+
+```bash
+docker run -d --name api-student-list  -p 5000:5000 -v ./student_age.json:/data/student_age.json student-list
+```
+```bash
+docker ps -a
+```
+![api container](images/image-api.png "docker images")
+
+- Tester l'API avec un curl
+
+```bash
+curl -u toto:python -X GET http://192.168.56.14:5000/pozos/api/v1.0/get_student_ages
+```
+
+![curl](images/curl.png "curl")

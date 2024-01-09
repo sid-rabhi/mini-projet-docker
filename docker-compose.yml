@@ -2,12 +2,12 @@ version: '3.1'
 
 services:
 
-  ihm-studentlist:
+  ihm-student-list:
     depends_on:
       - studentlist
     image: php:apache
     restart: always
-    container_name: ihm-studentlist
+    container_name: ihm-student-list
     ports:
       - 6000:80
     environment:
