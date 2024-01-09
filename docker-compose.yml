@@ -4,47 +4,47 @@ services:
 
   ihm-student-list:
     depends_on:
-      - studentlist
+      - api-student-list
     image: php:apache
     restart: always
     container_name: ihm-student-list
     ports:
-      - 6000:80
+      - 80:80
     environment:
       USERNAME: toto
       PASSWORD: python
     volumes:
       - ./website:/var/www/html
     networks:
-      - bootcamp16
+      - student-list-net
 
-  studentlist:
+  api-student-list:
 
-    image: bootcamp16-student-list
-    container_name: studentlist
+    image: student-list
+    container_name: api-student-list
     restart: always
     volumes:
       - ${PWD}/simple_api/student_age.json:/data/student_age.json
     networks:
-     - bootcamp16
+     - student-list-net
 
   registry:
     image: registry:2
     container_name: registry
     restart: always
     ports:
-     - 5000:5000
+     - 6000:5000
     networks:
-     - bootcamp16
+     - student-list-net
   
   registry-ui:
     image: joxit/docker-registry-ui:main
     restart: always
     ports:
-      - 80:80
+      - 8000:80
     environment:
       - SINGLE_REGISTRY=true
-      - REGISTRY_TITLE=Bootcamp16 registry UI
+      - REGISTRY_TITLE=student_list registry UI
       - DELETE_IMAGES=true
       - SHOW_CONTENT_DIGEST=true
       - NGINX_PROXY_PASS_URL=http://registry:5000
@@ -56,7 +56,7 @@ services:
       - CATALOG_ELEMENTS_LIMIT=1000
     container_name: registry-ui
     networks:
-     - bootcamp16
+     - student-list-net
 
 networks:
-  bootcamp16:
+  student-list-net:
