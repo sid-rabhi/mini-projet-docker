@@ -8,12 +8,6 @@ Les instructions pour le projet **student_list** se trouvent [ici](https://githu
 
 Auteur : Sid Ahmed Rabhi
 
-Contexte : formation Bootcamp DevOps promotion 16
-
-Centre de formation : Eazytraining
-
-Période : novembre-décembre-janvier
-
 Date : 09 janvier 2024
 
 LinkedIn : https://www.linkedin.com/in/sid-ahmed-rabhi/
