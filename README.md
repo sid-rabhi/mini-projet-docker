@@ -71,7 +71,7 @@ docker ps -a
 - Tester l'API avec un curl
 
 ```bash
-curl -u toto:python -X GET http://192.168.56.14:5000/pozos/api/v1.0/get_student_ages
+curl -u toto:python -X GET http://192.168.56.16:5000/pozos/api/v1.0/get_student_ages
 ```
 
 ![curl](images/curl.png "curl")
